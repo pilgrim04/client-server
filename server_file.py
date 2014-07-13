@@ -2,14 +2,13 @@ import socket
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 sock.bind(('', 1234))
-sock.listen(1)
+sock.listen(2)
 conn, addr = sock.accept()
 
 print 'successfully connected', addr
 
 my_dict = dict()
-#my_dict['Brasil'] = 1
-#my_dict['German'] = 7
+
 while True:
   data = conn.recv(1024)
 
