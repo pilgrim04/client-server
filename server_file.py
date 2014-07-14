@@ -21,8 +21,12 @@ while True:
   elif data == '2': # edit 1 element
     key_data = conn.recv(1024)
     value_data = conn.recv(1024)
-    my_dict[key_data] = value_data
-    conn.send('edited successfully')
+    try:
+      a = my_dict[key_data]
+      value_data = a
+      conn.send('edited successfully')
+    except:
+      conn.send('no such element to edit')
 
   elif data == '3':  # show 1 element
     data = conn.recv(1024)

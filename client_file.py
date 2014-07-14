@@ -10,9 +10,9 @@ print '4 - read multiple'
 print '5 - delete one element'
 print '6 - delete all elements'
 print '\' exit\' - close connection'
-print 'Your choice: ',
 
 while True:
+  print 'Your choice: ',
   user_choice = raw_input()
 
   if user_choice == str(1):  # Add element
